@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notification</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>lost and found </h1>
+
+    <button onclick="notify()">Click me</button>
+</body>
+<script>
+
+    const button = document.querySelector("click")
+    button.addEventListener("publier", () => {
+        if ("Notification" in window) {
+
+            if (Notification.permission == "granted") {
+                notify();
+
+            } else {
+
+
+                Notification.requestPermission().then((res) => {
+                    if (res === "granted") {
+                        console.log("notification acces denied ");
+                    }
+                    if (res === "default") {
+                        console.log("permission n'est pas donnée !  ");
+                    }
+                })
+            }
+
+        } else {
+            console.error("Notification not supported");
+        }
+    })
+
+
+    function notify() {
+        const notification = new Notification("Lost and found tunisia ", {
+            body: 'ons a publié une nouvelle publication ',
+            icon: '/logo.png ',
+            vibrate: [200, 100, 200],
+        });
+        const notification1 = new Notification("Lost and found tunisia ", {
+            body: 'mayssa a publié une nouvelle publication ',
+            icon: '/logo.png ',
+            vibrate: [200, 100, 200],
+        });
+        notification.addEventListener('click', () => {
+            window.open('https://openjavascript.info')
+
+        });
+        setTimeout(() => {
+            notification.close();
+
+        }, 5500)
+
+    }
+</script>
+
+</html>
