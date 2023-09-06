@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.parallax{
+    width: 100%;
+    height: 100%;
+}
+.parallax img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.parallax > img{
+    filter: blur(2px);
+}
+.agumented-ui{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agumented-ui .icons{
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+.agumented-ui .icons .row{
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+}
+.agumented-ui .icons .row .app{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: #ccc;
+    box-shadow: 2px 2px 8px #777, inset 2px 2px 8px #eee;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+.agumented-ui .icons .row .app:hover{
+    transform: scale(1.3);
+}
+.agumented-ui .icons .row .app img{
+    width: 4rem;
+    height: 4rem;
+}
+@media only screen and (max-width: 600px){
+    .agumented-ui .icons .row .app{
+        width: 5rem;
+        height: 5rem;
+    }
+    .agumented-ui .icons .row .app img{
+        width: 3rem;
+        height: 3rem;
+    }
+}
