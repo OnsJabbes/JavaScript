@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="your-logo.png" alt="Your Logo" width="200">
+ 
   <br>
   <span>🚀 JavaScript Project Showcase</span>
 </h1>
