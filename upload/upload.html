@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+	<title>Input Image With Preview Image</title>
+</head>
+<body>
+	
+	<div class="container">
+		<input type="file" id="file" accept="image/*" hidden>
+		<div class="img-area" id="ons" data-img="">
+			<i class='bx bxs-cloud-upload icon'></i>
+			<h3>Upload Image</h3>
+			<p>Image size must be less than <span>10MB</span></p>
+		</div>
+		<button class="select-image">Select Image</button>
+        <button id="delete-image" class="select-image" >delete Image</button>
+	</div>
+
+	<button onclick="showw()">Click me</button>
+	
+	<script src="script.js"></script>
+
+
+	<script>
+		function showw(){
+			var x = document.getElementById("ons");
+			var i = x.getElementsByTagName("img");
+
+			alert(i[0].src);
+		}
+	</script>
+</body>
+</html>
